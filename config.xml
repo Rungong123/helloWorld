@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors/>
+  <version>2.32.2</version>
+  <numExecutors>2</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+    <denyAnonymousReadAccess>true</denyAnonymousReadAccess>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+    <disableSignup>true</disableSignup>
+    <enableCaptcha>false</enableCaptcha>
+  </securityRealm>
+  <disableRememberMe>false</disableRememberMe>
+  <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+  <workspaceDir>${ITEM_ROOTDIR}/workspace</workspaceDir>
+  <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+  <jdks>
+    <jdk>
+      <name>java8</name>
+      <home>C:\Program Files\Java\jdk1.8.0_121\</home>
+      <properties/>
+    </jdk>
+  </jdks>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds>
+    <org.jenkinsci.plugins.mesos.MesosCloud plugin="mesos@0.14.0">
+      <name>MesosCloud</name>
+      <nativeLibraryPath></nativeLibraryPath>
+      <master></master>
+      <description></description>
+      <frameworkName>Jenkins Scheduler</frameworkName>
+      <role>*</role>
+      <slavesUser></slavesUser>
+      <credentialsId></credentialsId>
+      <cloudID>26bd5025-2eaa-4602-afec-f330ed25f3bd</cloudID>
+      <checkpoint>false</checkpoint>
+      <onDemandRegistration>true</onDemandRegistration>
+      <jenkinsURL></jenkinsURL>
+      <declineOfferDuration>600000</declineOfferDuration>
+      <slaveInfos>
+        <org.jenkinsci.plugins.mesos.MesosSlaveInfo>
+          <slaveCpus>0.1</slaveCpus>
+          <slaveMem>512</slaveMem>
+          <executorCpus>0.1</executorCpus>
+          <minExecutors>1</minExecutors>
+          <maxExecutors>2</maxExecutors>
+          <executorMem>128</executorMem>
+          <remoteFSRoot>jenkins</remoteFSRoot>
+          <idleTerminationMinutes>3</idleTerminationMinutes>
+          <jvmArgs>-Xms16m -XX:+UseConcMarkSweepGC -Djava.net.preferIPv4Stack=true</jvmArgs>
+          <jnlpArgs>-noReconnect</jnlpArgs>
+          <defaultSlave>false</defaultSlave>
+          <mode>NORMAL</mode>
+          <nodeProperties/>
+          <labelString>mesos</labelString>
+        </org.jenkinsci.plugins.mesos.MesosSlaveInfo>
+      </slaveInfos>
+    </org.jenkinsci.plugins.mesos.MesosCloud>
+  </clouds>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>All</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+  </views>
+  <primaryView>All</primaryView>
+  <slaveAgentPort>-1</slaveAgentPort>
+  <label></label>
+  <crumbIssuer class="hudson.security.csrf.DefaultCrumbIssuer">
+    <excludeClientIPFromCrumb>false</excludeClientIPFromCrumb>
+  </crumbIssuer>
+  <nodeProperties/>
+  <globalNodeProperties/>
+</hudson>
